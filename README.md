@@ -1,8 +1,5 @@
 # Emergency-Social-Network
 
-[![BCH compliance](https://bettercodehub.com/edge/badge/cmusv-fse/f22-ESN-SB5?branch=main&token=628101c70b979dd6145949f4f3f9584a9fc40a0e)](https://bettercodehub.com/)
-[![cmusv-fse](https://circleci.com/gh/cmusv-fse/f22-ESN-SB5.svg?style=svg&circle-token=d821cb8f2910ae91aec6265a03e042f62e5a5cd9)](https://circleci.com/gh/cmusv-fse/f22-ESN-SB5)
-
 
 Emergency Social Network (ESN)
 
