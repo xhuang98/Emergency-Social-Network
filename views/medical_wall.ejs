@@ -1,0 +1,94 @@
+<div id="<%= curr_user %>" class="medical-requests-container">
+	<div class="medical-request-list-wrapper">
+		<div class="overflow-wrapper">
+			<div class="list-container">
+			</div>
+		</div>
+	</div>
+	<div class="medical-request-container">
+		<button class="ms-2 post-new-message-button" style="float: right; margin-right: 5%; height: 50px; width: 50px;"
+			id="medical-request-send-btn" onclick="medical_wall.handleOpenModal()">
+			<i class="bi bi-plus-circle-fill"></i>
+		</button>
+	</div>
+	<div id="user_id" class="<%=user_id %>"></div>
+</div>
+
+
+<!-- Medical Request Unjoin Modal -->
+<div class="modal fade" id="medicalRequestJoinModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+	aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<br>
+				<div class="status-text">
+					Thank you for offering help! Your participation has been saved.
+				</div>
+				<br>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Medical Request Modal -->
+<div class="modal fade" id="medicalRequestModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+	aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="staticBackdropLabel">
+					Medical Help Request
+				</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<br>
+				<div class="status-text">
+					Helper Description:
+				</div>
+				<div class="medical-request-keyword-field flex-grow-1">
+					<input type="text" class="medical-request-input form-control" id="medical-request-input-text"
+						placeholder="enter a description..." aria-label="Search" aria-describedby="basic-addon1">
+				</div>
+				<br>
+				<div class="status-text">
+					Helpers Needed:
+				</div>
+				<div class="medical-request-keyword-field flex-grow-1">
+					<input type="number" class="medical-request-input form-control" id="medical-request-input-number"
+						placeholder="enter a number..." aria-label="Search" aria-describedby="basic-addon1">
+				</div>
+				<br>
+				<div class="top-buttons">
+					<button type="button" class="btn btn-primary mp-left"
+						onclick="medical_wall.handlePost()">Post</button>
+				</div>
+				<div class="medical-nearby-list d-none">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Medical Request Unjoin Modal -->
+<div class="modal fade" id="medicalRequestUnjoinModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+	aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<br>
+				<div class="status-text">
+					You have successfully unjoined.
+				</div>
+				<br>
+			</div>
+		</div>
+	</div>
+</div>

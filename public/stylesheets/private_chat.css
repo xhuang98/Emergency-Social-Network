@@ -1,0 +1,147 @@
+.private-chat-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.esn-list-container .list-container .list-item .private-chat-user-status {
+	color: #bdbdbd;
+}
+
+.esn-list-container .list-container .list-item .private-chat-user-status i{
+	font-size: 20px;
+}
+
+
+.private-chat-container .private-chat-header {      
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 10px;
+    background-color: #E27131;
+    opacity: 0.8;
+}
+
+.private-chat-container .private-chat-header #private-chat-receiver{
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.private-chat-container .private-chat-header #private-chat-back-container {
+    display: flex;
+    flex: 1;
+    cursor: pointer;   
+}
+
+.private-chat-container .private-chat-header #private-chat-back-container i{
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.private-chat-container .private-chat-header #private-chat-header-padding {
+    display: flex;
+    flex: 1;
+}
+
+.private-chat-container .private-message-list-wrapper {
+    display: flex;
+    flex-grow: 1;
+    min-height: 0;
+}
+
+.private-chat-container .private-message-list-wrapper .overflow-wrapper {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    position: relative;
+}
+
+.private-chat-container .private-message-list-wrapper .overflow-wrapper .list-container {
+    padding: 16px 10px 4px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+ .private-message-card {
+    border-radius: 16px;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    position: relative;
+}
+
+ .private-message-card .private-message-card-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+ .private-message-card .private-message-card-header .name {
+    font-size: 16px;
+    color: #1e88e5;
+    font-weight: 600;
+}
+
+ .private-message-card .private-message-card-header .status {
+    color: #9e9e9e;
+    font-size: 14px;
+}
+
+ .private-message-card .private-message-card-header .status i{
+    font-size: 20px;
+}
+
+ .private-message-card .private-message-card-message {
+    font-size: 18px;
+    color: #212121;
+}
+
+ .private-message-card .private-message-card-footer {
+    text-align: end;
+    font-size: 12px;
+    color: #9e9e9e;
+}
+
+
+
+.private-chat-container .private-message-container {
+    display: flex;
+    width: 100%;
+    padding: 6px 8px;
+    align-items: center;
+    border-top: 1px solid #e0e0e0;
+}
+
+.private-chat-container .private-message-container .form-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.private-chat-container .private-message-container .form-container .chat-textarea {
+    border-color: #e0e0e0;
+    border-radius: 16px;
+    width: 100%;
+    font-size: 16px;
+    padding: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.private-chat-container .private-message-container .form-container .post-new-message-button {
+    border: 0;
+    background-color: #E27131;
+    border-radius: 50%;
+    padding: 6px 10px;
+    transform: rotate(45deg);
+}
+
+.private-chat-container .private-message-container .form-container .post-new-message-button i {
+    color: #ffffff;
+}

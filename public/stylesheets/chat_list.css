@@ -1,0 +1,23 @@
+.esn-list-container .list-container .list-item.chat-list-offline {
+    border-left-color: #e0e0e0;
+}
+
+.esn-list-container .list-container .list-item .unread-private-msg-cnt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    top: -10px;
+    left: 0px;
+    background: #fb8c00;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 14px;
+    
+}

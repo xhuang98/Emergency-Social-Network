@@ -1,0 +1,522 @@
+.topbar {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	color: #000;
+	max-height: 72px;
+	padding: 0px 10px;
+	background-color: #E27131;
+}
+
+.topbar input[type="checkbox"],
+  .topbar .hamburger-lines {
+    display: none;
+  }
+
+.dropdown input[type="checkbox"],
+.dropdown .hamburger-lines {
+  display: block;
+}
+
+.dropdown {
+    display: block;
+    position: relative;
+    height: 64px;
+  }
+
+.dropdown input[type="checkbox"]:checked ~ .dropdown-menu {
+    transform: translateX(0);
+  }
+
+  .dropdown input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+    transform: rotate(35deg);
+  }
+
+  .dropdown input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+    transform: scaleY(0);
+  }
+
+  .dropdown input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+    transform: rotate(-35deg);
+  }
+
+  .dropdown input[type="checkbox"] {
+    position: absolute;
+    display: block;
+    height: 32px;
+    width: 30px;
+    top: 20px;
+    left: 20px;
+    z-index: 5;
+    opacity: 0;
+  }
+
+  .dropdown .hamburger-lines {
+    display: block;
+    height: 23px;
+    width: 35px;
+    position: relative;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .dropdown .hamburger-lines .line {
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-radius: 10px;
+    background: #FFFFFF;
+  }
+
+  .dropdown .hamburger-lines .line1 {
+    transform-origin: 0% 0%;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .dropdown .hamburger-lines .line2 {
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .dropdown .hamburger-lines .line3 {
+    transform-origin: 0% 100%;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .dropdown .dropdown-menu {
+    height: 100vh;
+    max-width: 300px;
+    transform: translate(-150%);
+    display: flex;
+    flex-direction: column;
+    margin-left: -40px;
+	margin-top: 40px;
+    padding-left: 32px;
+    transition: transform 0.5s ease-in-out;
+    box-shadow: 5px 0px 10px 0px #aaa;
+  }
+
+  .dropdown .dropdown-menu li {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+.topbar .user-setting-button {
+	border-radius: 50%;
+	border: 0;
+	background: none;
+	padding: 0;
+}
+
+.current-username {
+	color: #E27131!important;
+}
+
+.info-guide-status span{
+	font-size: 14px;
+	color: #616161;
+}
+
+.topbar .medical-assistance-button, .global-search-button  {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	border: 1px solid #e0e0e0;
+	background: none;
+}
+
+.topbar .medical-assistance-button .hospital-icon {
+	color: #ffffff;
+	font-size: 18px;
+}
+
+
+.topbar .global-search-button.active {
+	background-color: #E27131;
+}
+
+.topbar .global-search-button.active .search-icon {
+	color: #E27131;
+}
+
+.topbar .global-search-button:hover {
+	background-color: #E27131;
+}
+
+/* #user-profile-dropdown{
+	max-height: 600px;
+	overflow-y: auto;
+} */
+
+
+.topbar .global-search-button .search-icon {
+	color: #ffffff;
+	font-size: 22px;
+}
+
+
+.topbar #user-profile-dropdown .dropdown-item {
+	display: flex;
+	align-items: center;
+	padding: 8px 12px;
+	color: #424242;
+}
+
+.topbar #user-profile-dropdown .dropdown-item i {
+	font-size: 20px;
+	color: #757575;
+}
+
+.topbar .user-setting-button img {
+	height: 42px;
+	width: 42px;
+}
+
+.topbar .application-title {
+	font-size: 28px;
+	color: white;
+	font-weight: 800;
+	text-align: center;
+	letter-spacing: 1.2px;
+}
+
+.form-label span {
+	font-size: 12px;
+	color: #9e9e9e;
+}
+
+.form-control::placeholder {
+	color: #9e9e9e;
+}
+
+#statusChangeStaticBackdropModal .status-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #fafafa;
+	padding: 12px;
+	border-radius: 12px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	border: 1px solid #f5f5f5;
+}
+
+#statusChangeStaticBackdropModal .status-row:hover {
+	border-color: #616161;
+}
+
+#statusChangeStaticBackdropModal .status-row:last-child {
+	margin-bottom: 0px;
+}
+
+#statusChangeStaticBackdropModal .status-row .status-button {
+	border: 1px solid #bdbdbd;
+	padding: 8px;
+	border-radius: 12px;
+	font-size: 16px;
+	cursor: pointer;
+	min-width: 100px;
+	background-color: white;
+	text-align: center;
+	color: #212121;
+}
+
+#statusChangeStaticBackdropModal .status-row .status-text {
+	font-size: 16px;
+	color: #616161;
+	padding-right: 12px;
+}
+
+
+#statusChangeStaticBackdropModal .status-row.ok.active {
+	border-color: #4caf50;
+	color: #212121;
+	background-color: #e8f5e9;
+}
+
+#statusChangeStaticBackdropModal .status-row.ok.active .status-button {
+	background-color: #4caf50;
+	color: #ffffff;
+	font-weight: 600;
+	border-color: #4caf50;
+	box-shadow: none;
+}
+
+#statusChangeStaticBackdropModal .status-row.ok.active .status-text {
+	color: #388e3c;
+}
+
+#statusChangeStaticBackdropModal .status-row.help.active {
+	border-color: #fdd835;
+	color: #212121;
+	background-color: #fffde7;
+	box-shadow: none;
+}
+
+#statusChangeStaticBackdropModal .status-row.help.active .status-button {
+	background-color: #fdd835;
+	color: #212121;
+	font-weight: 600;
+	border-color: #fdd835;
+	box-shadow: none;
+}
+
+#statusChangeStaticBackdropModal .status-row.help.active .status-text {
+	color: #f9a825;
+}
+
+
+#statusChangeStaticBackdropModal .status-row.emergency.active {
+	border-color: #f44336;
+	background-color: #ffebee;
+	color: #212121;
+	box-shadow: none;
+}
+
+#statusChangeStaticBackdropModal .status-row.emergency.active .status-button {
+	background-color: #f44336;
+	color: white;
+	border-color: #f44336;
+	font-weight: 600;
+	box-shadow: none;
+}
+
+#statusChangeStaticBackdropModal .status-row.emergency.active .status-text {
+	color: #f44336;
+}
+
+#statusChangeStaticBackdropModal .status-row.undefined.active {
+	border-color: #9e9e9e;
+	color: #212121;
+	box-shadow: none;
+}
+
+#statusChangeStaticBackdropModal .status-row.undefined.active .status-button {
+	background-color: #9e9e9e;
+	color: white;
+	border-color: #bdbdbd;
+	font-weight: 600;
+	box-shadow: none;
+}
+
+#statusChangeStaticBackdropModal .status-row.undefined.active .status-text {
+	color: #616161;
+}
+
+
+#measurePerformanceStaticBackdropModal .form-label {
+	font-size: 14px;
+}
+
+#measurePerformanceStaticBackdropModal .performance-result-container {
+	display: flex;
+	justify-content: space-around;
+}
+
+#measurePerformanceStaticBackdropModal .performance-result-container .title {
+	font-size: 18px;
+	text-align: center;
+	margin-bottom: 16px;
+	font-weight: 600;
+	color: #424242;
+}
+
+#measurePerformanceStaticBackdropModal .performance-result-container .title p {
+	font-size: 12px;
+	color: #9e9e9e;
+	font-weight: 500;
+}
+
+#measurePerformanceStaticBackdropModal .performance-result-container .test-number {
+	display: flex;
+	justify-content: center;
+}
+
+#measurePerformanceStaticBackdropModal .performance-result-container .test-number {
+	background-color: #ffb74d;
+	height: 120px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 8px;
+	color: #ffffff;
+}
+
+
+#measurePerformanceStaticBackdropModal .performance-result-container .test-number .number {
+	font-size: 48px;
+	font-weight: 600;
+}
+
+#measurePerformanceStaticBackdropModal .loader {
+	display: none;
+}
+
+#measurePerformanceStaticBackdropModal .loader.show {
+	display: block;
+}
+
+
+#measurePerformanceStaticBackdropModal .modal-footer .test-button {
+	width: 100%;
+}
+
+.performance-settings-container {
+	background-color: #f5f5f5;
+	border-radius: 12px;
+	padding: 14px 12px 20px 12px;
+}
+
+.performance-settings-container .form-container {
+	position: relative;
+}
+
+.performance-settings-container .form-container .error-message {
+	position: absolute;
+	display: none;
+	bottom: -18px;
+	left: 4px;
+	font-size: 12px;
+	color: #f44336;
+}
+
+.performance-settings-container .form-container .error-message.show {
+	display: block;
+}
+
+
+.search-page-wrapper {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+}
+
+.search-page-wrapper .search-page-container {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.search-page-wrapper .criteria-select {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	border-right: 0;
+}
+
+.search-page-wrapper .search-box {
+	display: flex;
+	flex-direction: column;
+}
+
+.search-page-wrapper .search-input {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.search-page-wrapper .search-button {
+	width: 100%;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.search-page-wrapper .search-result-box {
+	flex-grow: 1;
+	background-color: #f5f5f5;
+	padding: 12px;
+	border-radius: 12px;
+	position: relative;
+	min-height: 20px;
+}
+
+.search-page-wrapper #search-result-overflow-wrapper {
+	display: flex;
+	height: 100%;
+	width: 100%;
+	overflow-y: auto;
+	position: relative;
+	flex-direction: column;
+}
+
+.search-page-wrapper .no-results-found-image-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.search-page-wrapper .no-results-found-image-wrapper.show {
+	display: flex;
+}
+
+.search-page-wrapper .no-results-found-image-wrapper img {
+	max-height: 300px;
+	width: 70%;
+}
+
+.search-page-wrapper .stop-button {
+	width: 90px;
+}
+
+.search-page-wrapper .search-loader-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	display: none;
+	background-color: rgba(255, 255, 255, 0.86);
+}
+
+.search-page-wrapper .search-loader-wrapper.show {
+	display: block;
+}
+
+#search-result-overflow-wrapper .list-item {
+	display: flex;
+	width: 100%;
+	background-color: white;
+	border: 1px solid #eeeeee;
+	border-radius: 8px;
+	padding: 12px 8px;
+	justify-content: start;
+	margin-bottom: 12px;
+	align-items: center;
+	position: relative;
+}
+
+
+/* For rendering privat chat status records search results */
+#search-result-overflow-wrapper .list-item .private-by-status-name {
+	padding: 4px;
+	font-size: 16px;
+	color: #212121;
+	font-weight: 500;
+}
+
+#search-result-overflow-wrapper .list-item .private-by-status-timestamp {
+	padding: 4px;
+	font-size: 16px;
+	color: #212121;
+	font-weight: 500;
+}
+
+#search-result-overflow-wrapper .list-item .private-by-status-user-status {
+	margin-left: auto;
+	color: #bdbdbd;
+}

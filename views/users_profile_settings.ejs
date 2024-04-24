@@ -1,0 +1,71 @@
+<div class="users-profile-settings-container">
+
+    <div class="first-aid-container-header">
+        <div class="first-aid-back-container invisible" class="text-center">
+            <i class="bi bi-chevron-left"></i>
+        </div>
+        <div class="first-aid-title">Users Profile Settings</div>
+        <div class="first-aid-header-padding d-flex flex-grow-1"></div>
+    </div>
+
+    <div style="flex-grow:1; min-height:10px">
+        <!-- LOADER PAGE -->
+        <div class="loader-wrapper">
+            <div class="loader-flex-wrapper">
+                <div class="loader-container">
+                    <div class="spinner-border text-primary" style="width: 4rem; height: 4rem;" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <div class="mt-2">
+                        <span class="text-muted">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="users-list-page p-2">
+        </div>
+        <div class="user-profile-page d-none d-flex flex-column p-2">
+            <div class="mb-2">
+                <label for="statusSelectForm" class="form-label">Account Status</label>
+                <select id="statusSelectForm" class="form-select" aria-label="Default select example">
+                    <option selected value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                </select>
+                <div id="statusSelectHelp" class="form-text">If you set this as inactive, the user will be logged out
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <label for="privilegeLevelSelectForm" class="form-label">Privilege Level</label>
+                <select id="privilegeLevelSelectForm" class="form-select" aria-label="Default select example">
+                    <option value="administrator">Administrator</option>
+                    <option value="coordinator">Coordinator</option>
+                    <option selected value="citizen">Citizen</option>
+                </select>
+            </div>
+            <div class="mb-2">
+                <label for="usernameForm" class="form-label">Username</label>
+                <input type="text" autocomplete="off" class="form-control" id="usernameForm"
+                    aria-describedby="emailHelp">
+                <div id="usernameHelp" class="form-text">The username must be 3 characters long and not already taken
+                </div>
+            </div>
+            <div class="mb-2">
+                <label for="passwordForm" class="form-label">Password</label>
+                <input type="password" autocomplete="off" id="passwordForm" class="form-control"
+                    aria-describedby="passwordHelpBlock">
+                <div id="passwordHelpBlock" class="form-text">
+                    The password must be 4 characters long
+                </div>
+            </div>
+            <div class="error-message-box d-none">
+            </div>
+            <div class="action-button d-flex justify-content-end mt-auto">
+                <button type="button" class="btn btn-danger"
+                    onclick="users_profile_settings.handleUserProfileCancelButtonClick()">Cancel</button>
+                <button type="button" id="add-edit-common-button" class="ms-3 btn btn-success"
+                    onclick="users_profile_settings.handleUserProfileSaveButtonClick()">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

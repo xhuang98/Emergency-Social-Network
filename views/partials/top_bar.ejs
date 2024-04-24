@@ -1,0 +1,314 @@
+<div class="topbar shadow">
+	<div class="dropdown">
+		<input type="checkbox" name="" id="burger-button">
+		<div class="hamburger-lines">
+			<span class="line line1"></span>
+			<span class="line line2"></span>
+			<span class="line line3"></span>
+		</div>
+		<ul id="user-profile-dropdown" class="dropdown-menu shadow-lg">
+			<li>
+				<h6 class="dropdown-header fs-6 fw-bolder text-primary current-username"></h6>
+			</li>
+			<li>
+				<a class="dropdown-item" href="javascript:void(0);" onclick="handleShareStatus()">
+					<i class="bi bi-person-check-fill dropdown-item-icon me-2"></i>
+					Share Status
+				</a>
+			</li>
+			<li>
+				<hr class="dropdown-divider">
+			</li>
+			<li>
+				<h6 class="dropdown-header">Medical Assistance</h6>
+			</li>
+			<li>
+				<a class="dropdown-item" href="javascript:void(0);" onclick="changeView('first-aid')"><i
+						class="bi bi-heart-pulse-fill dropdown-item-icon me-2"></i> First Aid Help</a>
+			</li>
+			<li>
+				<a class="dropdown-item" href="javascript:void(0);" onclick="handleMedicalNearby()"><i
+						class="bi bi-bandaid-fill dropdown-item-icon me-2"></i> Medical Nearby
+				</a>
+			</li>
+			<li>
+				<a class="dropdown-item" href="javascript:void(0);" onclick="changeView('my-medical-supplies')">
+					<i class="bi bi-prescription2 dropdown-item-icon me-2"></i>
+					My Medical Supplies
+				</a>
+			</li>
+			<li>
+				<a class="dropdown-item" href="javascript:void(0);" onclick="changeView('medical-supplies-exchange')">
+					<i class="bi bi-bag-plus-fill dropdown-item-icon me-2"></i>
+					Medi Supplies Exchange
+				</a>
+			</li>
+			<li>
+				<a class="dropdown-item" href="javascript:void(0);" onclick="changeView('medical-wall-view')">
+					<i class="bi bi-file-medical-fill dropdown-item-icon me-2"></i>
+					Medical Wall
+				</a>
+			</li>
+			<li>
+				<a class="dropdown-item" href="javascript:void(0);" onclick="handleProfile()">
+					<i class="bi bi-house-fill me-2 dropdown-item-icon"></i>My Address
+				</a>
+			</li>
+
+			<li>
+				<a class="dropdown-item d-none" href="javascript:void(0);" onclick="handleMap()">
+					<i class="bi bi-pin-map-fill me-2 dropdown-item-icon"></i>My Location
+				</a>
+			</li>
+
+			<div class="admin-setting-dropdown-wrapper d-none">
+				<li>
+					<hr class="dropdown-divider">
+				</li>
+				<li>
+					<h6 class="dropdown-header">Admin Settings</h6>
+				</li>
+				<li>
+					<a class="dropdown-item" href="javascript:void(0);" onclick="handleAdminSettings()">
+						<i class="bi bi-speedometer2 me-2"></i>
+						Measure Performance
+					</a>
+				</li>
+				<li>
+					<a class="dropdown-item" href="javascript:void(0);" onclick="changeView('users-profile-settings')">
+						<i class="bi bi-gear-fill me-2"></i>
+						Users Profile Settings
+					</a>
+				</li>
+			</div>
+
+			<li>
+				<hr class="dropdown-divider">
+			</li>
+			<li>
+				<a class="dropdown-item" href="javascript:void(0);" onclick="handleLogout()">
+					<i class="bi bi-box-arrow-right me-2 dropdown-item-icon"></i>
+					Logout
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="application-title">
+		ESN
+	</div>
+	<button id="search" class="global-search-button" onclick="handleSearchClick()">
+		<i class="search-icon bi bi-search"></i>
+	</button>
+</div>
+
+<!-- Measure Performance Modal -->
+<div class="modal fade" id="measurePerformanceStaticBackdropModal" data-bs-backdrop="static" data-bs-keyboard="false"
+	tabindex="-1" aria-labelledby="measurePerformanceStaticBackdropLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="measurePerformanceStaticBackdropLabel">
+					Measure Performance
+				</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<div class="performance-result-container">
+					<div class="flex-column flex-fill">
+						<div class="title">
+							POST <p>requests completed per second</p>
+						</div>
+						<div class="test-number shadow">
+							<span class="number" id="post-metric">NA</span>
+							<div class="spinner-border loader" role="status">
+								<span class="visually-hidden">Loading...</span>
+							</div>
+						</div>
+					</div>
+					<div class="ms-4 flex-column flex-fill">
+						<div class="title">
+							GET <p>requests completed per second</p>
+						</div>
+						<div class="test-number shadow">
+							<span class="number" id="get-metric">NA</span>
+							<div class="spinner-border loader" role="status">
+								<span class="visually-hidden">Loading...</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="performance-settings-container mt-4 d-flex">
+					<div class="flex-column form-container">
+						<label for="durationFormControlInput" class="form-label">Duration <span>(in
+								seconds)</span></label>
+						<input type="number" name="duration" required class="form-control form-control-lg"
+							id="durationFormControlInput" placeholder="Duration">
+						<div class="error-message p-text-danger">
+							Required
+						</div>
+					</div>
+					<div class="ms-3 flex-column form-container">
+						<label for="intervalFormControlInput" class="form-label">Interval <span>(in
+								milliseconds)</span></label>
+						<input type="number" name="interval" required class="form-control form-control-lg"
+							id="intervalFormControlInput" placeholder="Interval">
+						<div class="error-message p-text-danger">
+							This field is required
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" onclick="handleTestButtonClick()" class="btn test-button btn-success btn-lg">Start
+					Test</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Change User Status Modal -->
+<div class="modal fade" id="statusChangeStaticBackdropModal" data-bs-backdrop="static" data-bs-keyboard="false"
+	tabindex="-1" aria-labelledby="statusChangeStaticBackdropLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="statusChangeStaticBackdropLabel">
+					Share Status
+				</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<span class="text-secondary">Status icons</span>
+				<div
+					class="info-guide-status border-bottom pb-3 pt-2 d-flex align-items-center justify-content-between">
+					<div>
+						<i class="bi bi-check-circle-fill me-1" style="color:#4caf50;"></i><span>Ok </span>
+					</div>
+					<div>
+						<i class="bi bi-exclamation-circle-fill me-1" style="color:#fdd835; "></i><span>Help</span>
+					</div>
+					<div>
+						<i class="bi bi-plus-circle-fill me-1" style="color:#f44336;"></i><span>Emergency</span>
+					</div>
+					<div>
+						<i class="bi bi-dash-circle-fill me-1" style="color:#e0e0e0;"></i><span>Undefined</span>
+					</div>
+				</div>
+				<div class="py-2 text-dark">
+					Please select you status below:
+				</div>
+				<div class="status-row ok" onclick="handleShareStatusButtonClick('ok')">
+					<div class="status-text">
+						I am Ok: I do not need help
+					</div>
+					<div class="status-button">
+						OK
+					</div>
+				</div>
+				<div class="status-row help" onclick="handleShareStatusButtonClick('help')">
+					<div class="status-text">
+						I need help, but this is not a life threating emergency
+					</div>
+					<div class="status-button">
+						Help
+					</div>
+				</div>
+				<div class="status-row emergency" onclick="handleShareStatusButtonClick('emergency')">
+					<div class="status-text">
+						I need help now: this is a life threatening emergency!
+					</div>
+					<div class="status-button">
+						Emergency
+					</div>
+				</div>
+				<div class="status-row undefined" onclick="handleShareStatusButtonClick('undefined')">
+					<div class="status-text">
+						No status
+					</div>
+					<div class="status-button">
+						Undefined
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+				<button type="button" onclick="handleShareStatusConfirmButtonClick()"
+					class="btn btn-success">Confirm</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Search Modal -->
+<div class="modal fade p-2" id="searchStaticBackdropModal" data-bs-backdrop="static" data-bs-keyboard="false"
+	tabindex="-1" aria-labelledby="searchStaticBackdropLabel" aria-hidden="true">
+	<div class="modal-dialog h-100 m-auto">
+		<div class="modal-content h-100">
+			<div class="modal-header">
+				<h5 class="modal-title" id="searchStaticBackdropLabel">
+					Search
+				</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+					onclick="handleSearchModalCloseButtonClick()"></button>
+			</div>
+			<div class="modal-body" style="min-height:20px">
+				<div class="search-page-wrapper">
+					<div class="search-page-container">
+						<div class="search-box">
+							<div class="primary-container d-flex justify-content-start">
+								<div class="search-keyword-field flex-grow-1">
+									<input type="text" class="search-input form-control" id="search-input-text"
+										placeholder="enter keyword.." aria-label="Username"
+										aria-describedby="basic-addon1">
+								</div>
+								<div class="search-button-wrapper">
+									<button type="button" class="search-button btn btn-primary"
+										onclick="handleSearchButtonClick()">Search</button>
+								</div>
+							</div>
+						</div>
+						<div class="search-result-box mt-2">
+
+							<div id="search-result-overflow-wrapper">
+								<!-- Any new esn list card or public / private / announcement message box will be placed inside overflow wrapper-->
+							</div>
+
+							<div class="no-results-found-image-wrapper show">
+								<img src="/icons/search-not-found.svg" />
+								<div class="mt-4 text-secondary">
+									<h4>No Results Found</h4>
+								</div>
+							</div>
+							<div class="search-loader-wrapper">
+								<div class="loader-flex-wrapper">
+									<div class="loader-container">
+										<div class="spinner-border text-primary" style="width: 4rem; height: 4rem;"
+											role="status">
+											<span class="visually-hidden">Searching...</span>
+										</div>
+										<div class="mt-2">
+											<span class="text-muted">Searching ...</span>
+										</div>
+										<div class="mt-2">
+											<button type="button" class="stop-button btn btn-danger"
+												onclick="handleStopSearchButtonClick()">Stop</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="load-more-button d-flex justify-content-center mt-2 d-none">
+							<button type="button" onclick="handleShowMoreButtonClick()" class="btn btn-sm btn-light">See
+								More Results</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="/js/partials/topbar.js"></script>
+<script src="/js/PerformanceTester.js"></script>

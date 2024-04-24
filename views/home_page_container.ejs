@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel='stylesheet' href='./css/bootstrap.min.css' />
+  <link rel='stylesheet' href='./css/bootstrap-icons.css' />
+  <link rel='stylesheet' href='/stylesheets/esn_list.css' />
+  <link rel='stylesheet' href='/stylesheets/public_wall.css' />
+  <link rel='stylesheet' href='/stylesheets/chat_list.css' />
+  <link rel='stylesheet' href='/stylesheets/private_chat.css' />
+  <link rel='stylesheet' href='/stylesheets/announcements.css' />
+  <link rel='stylesheet' href='/stylesheets/first_aid.css' />
+  <link rel='stylesheet' href='/stylesheets/users_profile_settings.css' />
+  <link rel='stylesheet' href='/stylesheets/medical_supplies.css' />
+  <link rel='stylesheet' href='/stylesheets/topbar.css' />
+  <link rel='stylesheet' href='/stylesheets/footer.css' />
+  <link rel='stylesheet' href='/stylesheets/home-page.css' />
+  <link rel='stylesheet' href='/stylesheets/medical_wall.css' />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel='stylesheet' href='/stylesheets/medical_nearby.css' />
+
+
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css' rel='stylesheet' />
+
+  <script>
+    const backendURL = "<%= process.env.serverURL %>";
+  </script>
+
+  <script>
+    const mapboxToken = "<%= process.env.MAPBOX_API_TOKEN %>";
+  </script>
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css' rel='stylesheet' />
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/moment.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/requests.js"></script>
+  <script src="/js/home_page_container.js"></script>
+
+  <!-- load components -->
+  <script src="/js/api/component_controller.js"></script>
+  <script src="/js/api/component.js"></script>
+  <script src="/js/api/subcomponent.js"></script>
+  <script src="/js/components/medical_supply_exchange/my_medical_supplies.js"></script>
+  <script src="/js/components/medical_supply_exchange/medical_supplies_exchange.js"></script>
+  <script src="/js/components/esn_list.js"></script>
+  <script src="/js/components/public_wall.js"></script>
+  <script src="/js/components/chats.js"></script>
+  <script src="/js/components/private_chat.js"></script>
+  <script src="/js/components/search.js"></script>
+  <script src="/js/components/first_aid.js"></script>
+  <script src="/js/components/users_profile_settings.js"></script>
+  <script src="/js/components/announcements.js"></script>
+  <script src="/js/components/medical_wall.js"></script>
+  <script src="/js/components/map_view.js"></script>
+  <script src="/js/components/address_profile.js"></script>
+</head>
+
+<body>
+  <div class="home-page-container">
+    <%- include('partials/top_bar.ejs') %>
+      <div class="router-wrapper">
+      </div>
+      <%- include('partials/footer.ejs') %>
+        <div class="blocker-modal hide">
+          <div class="blocker-modal-body">
+            <img class="image" src="/icons/blocker-image.svg" />
+            <div class="title">Our site is getting a little tune up</div>
+            <div class="description">We apologize for the inconvience, but we're performing some maintainence. We'll be
+              back up soon!</div>
+          </div>
+        </div>
+        <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+          <div id="liveToast" class="toast align-items-center border-0" role="alert" aria-live="assertive"
+            aria-atomic="true">
+            <div class="d-flex justify-content-center">
+              <div class="toast-body text-center">
+              </div>
+              <button type="button" class="btn-close d-none btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                aria-label="Close"></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- USER SETTINGS CHANGED MESSAGE MODAL -->
+        <div class="modal fade" id="accountDeactivatedStaticBackdropModal" data-bs-backdrop="static"
+          data-bs-keyboard="false" tabindex="-1" aria-labelledby="accountSettingsMessageModalStaticBackdropLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title fw-bolder text-danger" id="accountSettingsMessageModalStaticBackdropLabel">
+                  Account Settings Changed!
+                </h5>
+              </div>
+              <div class="modal-body">
+                <div class="d-flex flex-column">
+                  <div class="decription">
+                    Your account settings has been<strong> changed by the ESN Admin</strong>. You will be now logged out
+                    of the system. Please contact the ESN Admin for further support.
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" onclick="handleInactiveLogoutButtonClick()" class="btn btn-primary"
+                  style="width: 100px;">Ok</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <%- include('partials/medical_nearby.ejs') %>
+  </div>
+</body>
+
+</html>

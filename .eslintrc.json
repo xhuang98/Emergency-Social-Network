@@ -1,0 +1,26 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": "eslint:recommended",
+    "overrides": [
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "rules": {
+        "camelcase": ["warn"],
+        "quotes": [
+            "off"
+        ],
+        "semi": [
+            "warn",
+            "always"
+        ],
+        "no-undef": ["off"], // can't recognize jest, jquery, etc.
+        "no-unused-vars": ["warn"]
+    }
+}
+

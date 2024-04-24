@@ -1,0 +1,270 @@
+<div class="first-aid-container">
+
+	<div class="first-aid-container-header">
+		<div class="first-aid-back-container invisible" class="text-center" onclick="first_aid.showFirstAidListPage()">
+			<i class="bi bi-chevron-left"></i>
+		</div>
+		<div class="first-aid-title">First Aid Help</div>
+		<div class="first-aid-header-padding d-flex flex-grow-1"></div>
+	</div>
+
+	<div style="flex-grow:1; min-height:10px">
+
+		<!-- LOADER PAGE -->
+		<div class="loader-wrapper">
+			<div class="loader-flex-wrapper">
+			  <div class="loader-container">
+				<div class="spinner-border text-primary" style="width: 4rem; height: 4rem;" role="status">
+				  <span class="visually-hidden">Loading...</span>
+				</div>
+				<div class="mt-2">
+				  <span class="text-muted">Loading...</span>
+				</div>
+			  </div>
+			</div>
+		  </div>
+
+		<!-- FIRST AID ALL INSTRUCTIONS LIST PAGE -->
+		<div class="first-aid-add-list-page">
+			<div class="d-flex flex-column" style="height:100%">
+				<div class="d-flex justify-content-end pb-2 px-2 pt-3">
+					<button type="button" class="btn btn-success me-3" onclick="first_aid.handleAddFirstAidClick()"><i class="bi bi-file-earmark-plus-fill me-1"></i>Add
+						First
+						Aid</button>
+					<button type="button" class="btn btn-danger" onclick="first_aid.handleRequestFirstAidClick()"><i class="bi bi-people-fill me-1"></i>Request First
+						Aid</button>
+				</div>
+				<div class="first-aid-cards-wrapper">
+					<div class="overflow-wrapper p-2">
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- FIRST AID ADD NEW OR EDIT OLD INSTRUCTIONS PAGE -->
+		<div class="first-aid-add-instructions-page d-none">
+			<div class="page-header">
+				First Aid Instructions
+			</div>
+			<div class="instructions-rule mt-2">
+				Please Note: Medical Injury title should be new and minimum 5 characters and Instructions description should be minimum 260 characters
+			</div>
+			<div class="medical-injury-name-field mt-2">
+				<label for="exampleFormControlInput1" class="form-label">Medical Injury</label>
+				<input type="text" class="form-control" onkeyup="first_aid.validateMedicalInjuryText();" id="medicalInjuryForm" placeholder="Example Burn, Cut, Fracture">
+			</div>
+			<label for="exampleFormControlTextarea1" class="form-label mt-3">Instructions</label>
+			<div class="flex-grow-1">
+				<textarea class="form-control" id="firstAidInstructionsForm" style="height: 100%"></textarea>
+			</div>
+			<div class="action-button d-flex justify-content-end mt-3">
+				<button type="button" class="btn btn-danger" onclick="first_aid.showFirstAidListPage()">Cancel</button>
+				<button type="button" id="add-edit-common-button" class="ms-3 btn btn-success"
+					onclick="first_aid.handleFirstAidInstructionsSubmitButtonClick()"></button>
+			</div>
+		</div>
+
+		<!-- VIEW FIRST AID INSTRUCTIONS PAGE -->
+		<div class="first-aid-view-instructions-page d-none">
+			<div class="page-header d-flex align-items-center justify-content-between ps-3 pb-3">
+				<span class="text">NA</span>
+				
+			</div>
+			<div style="flex-grow: 1; min-height: 20px">
+				<div class="d-flex flex-column h-100 bg-white rounded-4 p-3">
+					<div class="d-flex pb-3	">
+						<div class="instruction-header">Instructions</div>
+						<div class="certi ms-auto me-2 view-certificate-button">
+						</div>
+						<button type="button" id="report-instructions-button" class="btn btn-sm btn-warning" onclick="first_aid.handleReportInstructionsButtonClick()"><i
+							class="bi bi-exclamation-circle me-2"></i>Report</button>
+					</div>
+					
+					<div style="flex-grow: 1; min-height: 10px">
+						<div class="instructions-description" style="height: 100%; overflow-y: auto;">
+							NA
+						</div>
+					</div>
+					<div class="instructions-details pt-2 d-flex justify-content-between">
+						<span class="author">NA</span>
+						<span class="datetime">NA</span>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+
+	</div>
+</div>
+
+
+
+<!-- ALL MODALS DEFINED HERE -->
+
+<!-- UPLOAD MEDICAL CERTIFICATE MODAL -->
+<div class="modal fade" id="uploadCertificateStaticBackdropModal" data-bs-backdrop="static" data-bs-keyboard="false"
+	tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title fw-bolder" id="staticBackdropLabel">
+					Upload Medical Certificate
+				</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<div class="d-flex flex-column">
+					<div class="decription">
+						To add First Aid Instructions in the ESN you need to have Medical Expertise. Hence, we require you to upload
+						a Medical Certificate
+					</div>
+					<div class="file-instructions mt-4">
+						Please Note:- Upload your medical certificate image in jpg format only and the size of file
+						should not exceed 100KB
+					</div>
+					<form id="medicalCertificateUploadForm" enctype="multipart/form-data">
+						<input class="form-control" id="medicalCertificateFile" type="file" name="medicalCertificateFile" accept=".jpeg,.jpg">
+					</form>
+
+					<div class="error-message-box">
+						<span>Please check your file is in jpg format and the size is less than 100KB</span>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer mt-4">
+				<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+				<button type="button" onclick="first_aid.handleUploadCertificateButtonClick()"
+					class="btn btn-success">Upload</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- REPORT INSTRUCITONS MODAL -->
+<div class="modal fade" id="reportInstructionStaticBackdropModal" data-bs-backdrop="static" data-bs-keyboard="false"
+	tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title fw-bolder" id="staticBackdropLabel">
+					Report Instructions
+				</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<div class="d-flex flex-column">
+					<div class="decription">
+						If you feel the instructions provided here are not comphrensive, missing any information or you
+						need more information on the injury to be updated by the doctor. Please type in your query in
+						the below textbox.
+					</div>
+					<div class="file-instructions mt-4">
+						Please Note:- Your query description must be atleast 100 characters long
+					</div>
+					<textarea class="form-control" id="reportInstructionsForm" row="6"></textarea>
+					<div class="error-message-box">
+						<span>Your query description must be atleast 100 characters long</span>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer mt-4">
+				<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+				<button type="button" onclick="first_aid.handleSendReportInstructionButtonClick()"
+					class="btn btn-success">Report</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- REQUEST INSTRUCITONS MODAL -->
+<div class="modal fade" id="requestInstructionStaticBackdropModal" data-bs-backdrop="static" data-bs-keyboard="false"
+	tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title fw-bolder" id="staticBackdropLabel">
+					Request Instructions
+				</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<div class="d-flex flex-column">
+					<div class="decription">
+						If you want to request first-aid instructions of a medical injury which in not available in our
+						ESN then kindly type in your request along with medical injury you want instructions of. We will
+						get it added in our ESN.
+					</div>
+					<div class="file-instructions mt-4">
+						Please Note:- Your request description must be atleast 100 characters long
+					</div>
+					<textarea class="form-control" id="requestInstructionsForm" row="6"></textarea>
+					<div class="error-message-box">
+						<span>Your request description must be atleast 100 characters long</span>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer mt-4">
+				<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+				<button type="button" onclick="first_aid.handleSendRequestInstructionButtonClick()"
+					class="btn btn-success">Request</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- DELETE INSTRUCTIONS MODAL -->
+<div class="modal fade" id="deleteInstructionStaticBackdropModal" data-bs-backdrop="static" data-bs-keyboard="false"
+	tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title fw-bolder" id="staticBackdropLabel">
+					Delete Instructions
+				</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<div class="d-flex flex-column">
+					<div class="decription">
+						Are you sure want to delete the first Aid Instructions?
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" onclick="first_aid.handleDeleteInstructionsConfirmationButtonClick()"
+					class="btn btn-danger">Delete</button>
+				<button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- REQUEST INSTRUCTIONS MODAL ERROR -->
+<div class="modal fade" id="noDoctorsFoundStaticBackdropModal" data-bs-backdrop="static" data-bs-keyboard="false"
+	tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title fw-bolder" id="staticBackdropLabel">
+					Request First Aid Instructions
+				</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<div class="d-flex flex-column">
+					<div class="decription">
+						Oops! It seems currently we don't have doctors in our ESN to provide new first aid instructions. We request you to try again after a few days as we try to get doctors added in our ESN. 
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
+			</div>
+		</div>
+	</div>
+</div>

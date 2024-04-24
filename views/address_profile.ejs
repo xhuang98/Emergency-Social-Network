@@ -1,0 +1,80 @@
+<div class="esn-list-container">
+
+
+  <div class="first-aid-container-header">
+    <div class="first-aid-back-container invisible" class="text-center">
+      <i class="bi bi-chevron-left"></i>
+    </div>
+    <div class="first-aid-title">My Address</div>
+    <div class="first-aid-header-padding d-flex flex-grow-1"></div>
+  </div>
+
+
+  <div class="list-container mx-sm-3">
+    <form>
+      <div class="form-group m-3">
+        <label for="streetline1">Street</label>
+        <input type="text" class="form-control" id="streetline1" placeholder="Line 1" value="<%=streetline1%>">
+      </div>
+
+      <div class="form-group m-3">
+        <input type="text" class="form-control" id="streetline2" placeholder="Line 2" value="<%=streetline2%>">
+      </div>
+      <div class="form-group m-3">
+        <label for="city">City</label>
+        <input type="text" class="form-control" id="city" value="<%=city%>">
+      </div>
+      <div class="form-group m-3">
+        <label class="form-check-label" for="zipCode">Zip Code</label>
+        <input type="text" class="form-control" id="zipCode" placeholder="" value="<%= zipCode %>">
+      </div>
+      <div class="m-3 float-end">
+        <button type="button" class="btn btn-danger me-2" onclick="address.deleteAddressConfirm()">Delete</button>
+        <% if(addressFound){ %>
+          <button type="button" class="btn btn-success" onclick="address.updateAddress()">Update</button>
+          <%} else {%>
+            <button type="button" class="btn btn-success" onclick="address.createAddress()">Create</button>
+            <%}%> 
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<div class="modal fade" id="checkZipCode" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Zip Code Error!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Your zip code can only contain numbers.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="address.closeModal()">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="deleteAddressModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete Address</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-body">
+        Are you sure you want to delete your address?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="address.closeModal()">Cancel</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal"
+        onclick="address.deleteAddress()">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>

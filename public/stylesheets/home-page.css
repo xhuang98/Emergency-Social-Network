@@ -1,0 +1,145 @@
+html {
+	height: 100%;
+	width: 100%;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	position: relative;
+	overflow: hidden;
+}
+
+.home-page-container {
+	position: relative;
+	height: 100%;
+	width: 50%;
+	display: flex;
+	margin: auto;
+	flex-direction: column;
+	justify-items: center;
+	box-sizing: border-box;
+	background-color: #f5f5f5;
+	border: 1px solid #e0e0e0;
+}
+
+@media screen and (max-width: 1024px) {
+
+	/* For mobile devices  */
+	.home-page-container {
+		width: 100%;
+		border: 0;
+	}
+}
+
+
+.router-wrapper {
+	display: flex;
+	flex-grow: 1;
+	min-height: 0;
+}
+
+.loader-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	display: none;
+	background-color: rgba(255, 255, 255, 0.86);
+}
+
+.loader-wrapper.show {
+	display: block;
+}
+
+.loader-flex-wrapper {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: auto;
+}
+
+.loader-flex-wrapper .loader-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.loader-flex-wrapper .loader-container .spinner-border{
+	color: #E27131 !important;
+}
+
+.blocker-modal {
+	position: absolute;
+	display: flex;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	background-color: white;
+	z-index: 1;
+}
+
+.blocker-modal.hide {
+	display: none;
+}
+
+.blocker-modal-body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	padding: 12px;
+}
+
+.blocker-modal-body .title {
+	font-size: 42px;
+	color: #E27131;
+	margin-top: 12px;
+	text-align: center;
+}
+
+.blocker-modal-body .description {
+	font-size: 18px;
+	color: #424242;
+	margin-top: 12px;
+	text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+
+	/* For mobile devices  */
+	.blocker-modal-body .description {
+		font-size: 14px;
+	}
+
+	.blocker-modal-body .title {
+		font-size: 28px;
+	}
+}
+
+.blocker-modal-body .image {
+	width: 80%;
+	height: auto;
+	background-size: cover;
+}
+
+#liveToast {
+	background: #ff8f00;
+	color: #fff;
+	font-size: 16px;
+}

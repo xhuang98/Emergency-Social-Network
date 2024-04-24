@@ -1,0 +1,68 @@
+{
+  "name": "fse-group-project",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node bin/www.js --PORT 433",
+    "dev": "nodemon bin/www.js -e html,js,ejs,json",
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest --detectOpenHandles",
+    "test-coverage": "NODE_OPTIONS=--experimental-vm-modules npx jest --coverage --runInBand",
+    "lint": "npx eslint ."
+  },
+  "dependencies": {
+    "@jest/globals": "^29.3.1",
+    "bcrypt": "^5.0.1",
+    "blueimp-md5": "^2.19.0",
+    "bootstrap": "^5.2.1",
+    "bootstrap-icons": "^1.9.1",
+    "debug": "^4.3.4",
+    "dotenv": "^16.0.2",
+    "ejs": "^3.1.8",
+    "express": "~4.16.1",
+    "express-fileupload": "^1.4.0",
+    "http-errors": "~1.6.3",
+    "jquery": "^3.6.1",
+    "jsonwebtoken": "^8.5.1",
+    "mapbox-gl": "^2.11.0",
+    "moment": "^2.29.4",
+    "mongodb-memory-server": "^8.9.5",
+    "mongoose": "^6.6.0",
+    "nodemon": "^2.0.20",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "socket.io": "^4.5.2",
+    "superagent": "^8.0.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/plugin-transform-modules-commonjs": "^7.19.6",
+    "@babel/preset-env": "^7.20.2",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^29.2.2",
+    "eslint": "^8.28.0",
+    "i": "^0.3.7",
+    "jest": "^29.2.0",
+    "npm": "^8.19.3"
+  },
+  "description": "Emergency Social Network (ESN)",
+  "main": "app.js",
+  "bin": {
+    "fse-group-project": "bin/www.js"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmusv-fse/f22-ESN-SB5.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cmusv-fse/f22-ESN-SB5/issues"
+  },
+  "homepage": "https://github.com/cmusv-fse/f22-ESN-SB5#readme"
+}

@@ -1,0 +1,1661 @@
+{
+	"info": {
+		"_postman_id": "fa3e9fba-2fe8-43ee-b133-cb3ca9695b13",
+		"name": "FSE Project",
+		"description": "This details all current endpoints for our FSE ESN Application.\n\nAfter you login you will get a JWT token saved in your localStorage. (In postman it gets saved under a variable in the environment).\n\nThis is further used as a bearer token to authenticate requests.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24091558"
+	},
+	"item": [
+		{
+			"name": "Views",
+			"item": [
+				{
+					"name": "Get login page",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								""
+							]
+						},
+						"description": "**Used from website.**\n\nReturns the html for the login page you see as soon as you enter the website"
+					},
+					"response": []
+				},
+				{
+					"name": "Get healthcheck",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/healthcheck",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"healthcheck"
+							]
+						},
+						"description": "**Used from website.**\n\nReturns the html for the login page you see as soon as you enter the website"
+					},
+					"response": []
+				},
+				{
+					"name": "Get private chats view",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/chats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"chats"
+							]
+						},
+						"description": "**Used from website.**\n\nReturns the html for the login page you see as soon as you enter the website"
+					},
+					"response": []
+				},
+				{
+					"name": "Get inside private chat with a user view",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/private-chat",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"private-chat"
+							]
+						},
+						"description": "**Used from website.**\n\nReturns the html for the login page you see as soon as you enter the website"
+					},
+					"response": []
+				},
+				{
+					"name": "Get esn list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/esn-list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"esn-list"
+							]
+						},
+						"description": "**Used from website.**\n\nReturns the html for the login page you see as soon as you enter the website"
+					},
+					"response": []
+				},
+				{
+					"name": "Get public wall",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/public-wall",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"public-wall"
+							]
+						},
+						"description": "**Used from website.**\n\nReturns the html for the login page you see as soon as you enter the website"
+					},
+					"response": []
+				},
+				{
+					"name": "Get dashboard",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/dashboard",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"dashboard"
+							]
+						},
+						"description": "**Used from website.**\n\nReturns the html for the dashboard page you see after you login"
+					},
+					"response": []
+				}
+			],
+			"description": "This are the endpoints that return a **website view**"
+		},
+		{
+			"name": "Authorization",
+			"item": [
+				{
+					"name": "Token Validation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/token-validation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"token-validation"
+							]
+						},
+						"description": "Returns if a JWT token is valid or not. The token is sent as a bearer token in the authorization header"
+					},
+					"response": [
+						{
+							"name": "Token Validation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/users/token-validation",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"token-validation"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "39"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"27-Yf68QqFGwP7DnNGkMHKHcB1FlPM\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Sep 2022 03:16:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"valid\": true,\n    \"acknowledgedRules\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"token\", jsonData.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"tp55\",\n    \"password\": \"tp55\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/authentication",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"authentication"
+							]
+						},
+						"description": "Logs in to the system. Input a username and password and it returns a token.\n\n**In postman this will automatically set your authentication token**"
+					},
+					"response": []
+				},
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"tp55\",\n    \"password\": \"tp55\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/registration",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"registration"
+							]
+						},
+						"description": "Registers a new user. Only username and password are required.\n\n**In postman this will automatically set your authentication token**"
+					},
+					"response": [
+						{
+							"name": "Signup",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"tp55\",\n    \"password\": \"tp55\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/users/registration",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "60"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3c-6PS9/cPtGqjos+zb8kQWeKBMlDI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Sep 2022 03:16:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Username already exists\",\n    \"signup_success\": false\n}"
+						}
+					]
+				}
+			],
+			"description": "Everything related to authentication. Login/Logout and account handling"
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Validate User & Password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\": \"tatanpoker09\", \"password\": \"test_password\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/validation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"validation"
+							]
+						},
+						"description": "Validates that usernames and passwords are valid.\n\nThis means usernames are at least 3 characters.\n\nThis means passwords are at least 4 characters.\n\nFinally a check if the user exists or not is done.\n\nResponses include three parameters:\n\n\\*   validation_success: if the user and password are valid.\n\\*   user_exists: Returns if the user already exists in the database.\n\\*   message: Message description if there was an error or not"
+					},
+					"response": [
+						{
+							"name": "Validate User & Password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"username\": \"tatanpoker09\", \"password\": \"test_password\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/users/validation",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"validation"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "100"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"64-75cBXKpjeEe8Qu8rHIODcPkOxoE\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Sep 2022 02:16:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"validation_success\": true,\n    \"user_exists\": false,\n    \"message\": \"passed username and password validation.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Acknowledge Rules",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/acknowledgment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"acknowledgment"
+							]
+						},
+						"description": "Establishes that the user has Acknowledges Rules. There is no way to un-acknowledge."
+					},
+					"response": [
+						{
+							"name": "Acknowledge Rules",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/users/acknowledgment",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"acknowledgment"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c-dFrO+49xsn53+U21jga9+tOo5sM\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Sep 2022 03:16:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"username\": \"tp55\",\n    \"acknowledgedRules\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Acknowledged Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/acknowledgment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"acknowledgment"
+							]
+						},
+						"description": "Returns the acknowledged status of a specific user."
+					},
+					"response": [
+						{
+							"name": "Get Acknowledged Status",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/users/acknowledgment",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"acknowledgment"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c-dFrO+49xsn53+U21jga9+tOo5sM\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Sep 2022 03:17:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"username\": \"tp55\",\n    \"acknowledgedRules\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								""
+							]
+						},
+						"description": "Returns a list of all users registered in the ESN directory, sorted first by online users first and offline users second, and then alphabetically within these two groups."
+					},
+					"response": []
+				},
+				{
+					"name": "Share Status",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"status"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Share Status",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/users/status",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n\"username\": \"tp55\",\n\"status\": \"undefined\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"status"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Status",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/users/status",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n\"username\": \"tp55\",\n\"status\": \"undefined\"\n}"
+						}
+					]
+				}
+			],
+			"description": "Handles everything related to User profiles. (This is actually everything related to users that isn't authorization related)",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Public Messages",
+			"item": [
+				{
+					"name": "Send Public Chat Message",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"text\": \"This is a sample text 11\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/public-messages",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"public-messages"
+							]
+						},
+						"description": "Saves a message to the public chat"
+					},
+					"response": [
+						{
+							"name": "Send Public Chat Message",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"text\": \"This is a sample text 11\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/public-messages/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"public-messages",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "103"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"67-efSYOv7LUfC3wTrFq/TCXG3luRQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Sep 2022 03:17:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"displayName\": \"tp55\",\n    \"text\": \"This is a sample text 11\",\n    \"timestamp\": 1664335034921,\n    \"status\": \"undefined\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Latest Public Chat Messages",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/public-messages?amount=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"public-messages"
+							],
+							"query": [
+								{
+									"key": "amount",
+									"value": "5"
+								}
+							]
+						},
+						"description": "Retrieves the latest {{amount}} messages posted in the public chat. This are sorted from latest to oldest"
+					},
+					"response": [
+						{
+							"name": "Get Latest Public Chat Messages",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/public-messages?amount=5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"public-messages"
+									],
+									"query": [
+										{
+											"key": "amount",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "879"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"36f-AdNBJARCkWdAAVyMB3x4JEblJPs\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Sep 2022 03:17:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"6333bcbab76bffde652d5114\",\n        \"username\": \"tp55\",\n        \"displayName\": \"tp55\",\n        \"timestamp\": \"2022-09-28T03:17:14.921Z\",\n        \"text\": \"This is a sample text 11\",\n        \"status\": \"undefined\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"63316e2d7af1e05ac332739b\",\n        \"username\": \"tp55\",\n        \"displayName\": \"tp55\",\n        \"timestamp\": \"2022-09-26T09:17:33.608Z\",\n        \"text\": \"This is a sample text 11\",\n        \"status\": \"undefined\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"63316be3532898a5ae0f0174\",\n        \"username\": \"tp55\",\n        \"displayName\": \"tp55\",\n        \"timestamp\": \"2022-09-26T09:07:47.416Z\",\n        \"text\": \"This is a sample text 10\",\n        \"status\": \"undefined\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"63316be0532898a5ae0f0171\",\n        \"username\": \"tp55\",\n        \"displayName\": \"tp55\",\n        \"timestamp\": \"2022-09-26T09:07:44.872Z\",\n        \"text\": \"This is a sample text 9\",\n        \"status\": \"undefined\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"63316bdd532898a5ae0f016e\",\n        \"username\": \"tp55\",\n        \"displayName\": \"tp55\",\n        \"timestamp\": \"2022-09-26T09:07:41.874Z\",\n        \"text\": \"This is a sample text 8\",\n        \"status\": \"undefined\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				}
+			],
+			"description": "Everything related to public messages handling, both saving and retrieving"
+		},
+		{
+			"name": "Private Messages",
+			"item": [
+				{
+					"name": "Send Private Chat Message",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"text\": \"This is a sample text 11\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/private-messages/:username",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"private-messages",
+								":username"
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": null
+								}
+							]
+						},
+						"description": "Saves a message to the public chat"
+					},
+					"response": [
+						{
+							"name": "Send Private Chat Message",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"text\": \"This is a sample text 11\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/private-messages/:username",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"private-messages",
+										":username"
+									],
+									"variable": [
+										{
+											"key": "username",
+											"value": null
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "103"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"67-efSYOv7LUfC3wTrFq/TCXG3luRQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Sep 2022 03:17:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[   {\n        \"_id\": \"6333bcbab76bffde652d5114\",\n        \"originUsername\": \"tp55\",\n        \"displayName\": \"tp55\",\n        \"timestamp\": \"2022-09-28T03:17:14.921Z\",\n        \"text\": \"This is a sample text 12\",\n        \"status\": \"undefined\",\n        \"destinationUsername\": \"hakan\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get Latest Private Chat Messages",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/private-messages/:username?amount=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"private-messages",
+								":username"
+							],
+							"query": [
+								{
+									"key": "amount",
+									"value": "5"
+								}
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": null
+								}
+							]
+						},
+						"description": "Retrieves the latest {{amount}} messages posted in the public chat. This are sorted from latest to oldest"
+					},
+					"response": [
+						{
+							"name": "Get Latest Private Chat Messages",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/private-messages/:username?amount=5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"private-messages",
+										":username"
+									],
+									"query": [
+										{
+											"key": "amount",
+											"value": "5"
+										}
+									],
+									"variable": [
+										{
+											"key": "username",
+											"value": null
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "879"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"36f-AdNBJARCkWdAAVyMB3x4JEblJPs\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Sep 2022 03:17:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"6333bcbab76bffde652d5114\",\n        \"username\": \"tp55\",\n        \"displayName\": \"tp55\",\n        \"timestamp\": \"2022-09-28T03:17:14.921Z\",\n        \"text\": \"This is a sample text 12\",\n        \"status\": \"undefined\",\n        \"destination\": \"hakan\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"63316e2d7af1e05ac332739b\",\n        \"username\": \"tp55\",\n        \"displayName\": \"tp55\",\n        \"timestamp\": \"2022-09-26T09:17:33.608Z\",\n        \"text\": \"This is a sample text 11\",\n        \"status\": \"undefined\",\n        \"destination\": \"hakan\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"63316be3532898a5ae0f0174\",\n        \"username\": \"tp55\",\n        \"displayName\": \"tp55\",\n        \"timestamp\": \"2022-09-26T09:07:47.416Z\",\n        \"text\": \"This is a sample text 10\",\n        \"status\": \"undefined\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"63316be0532898a5ae0f0171\",\n        \"username\": \"tp55\",\n        \"displayName\": \"tp55\",\n        \"timestamp\": \"2022-09-26T09:07:44.872Z\",\n        \"text\": \"This is a sample text 9\",\n        \"status\": \"undefined\",\n        \"destination\": \"hakan\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"63316bdd532898a5ae0f016e\",\n        \"username\": \"tp55\",\n        \"displayName\": \"tp55\",\n        \"timestamp\": \"2022-09-26T09:07:41.874Z\",\n        \"text\": \"This is a sample text 8\",\n        \"status\": \"undefined\",\n        \"destination\": \"hakan\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				}
+			],
+			"description": "Everything related to public messages handling, both saving and retrieving"
+		},
+		{
+			"name": "Private Notification",
+			"item": [
+				{
+					"name": "Creates or updates a message count",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/private-notifications/:senderUsername",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"private-notifications",
+								":senderUsername"
+							],
+							"variable": [
+								{
+									"key": "senderUsername",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gets the unread private message count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/private-notifications/unread-message-count/:senderUsername",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"private-notifications",
+								"unread-message-count",
+								":senderUsername"
+							],
+							"variable": [
+								{
+									"key": "senderUsername",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all unread messages for a destinationUser with destinationUsername",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/private-notifications/unread-message-nonzero-counts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"private-notifications",
+								"unread-message-nonzero-counts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checks if current user has unread messages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/private-notifications/unread-message-existence",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"private-notifications",
+								"unread-message-existence"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Measure Performance",
+			"item": [
+				{
+					"name": "Block website",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/block?set=true&duration=10000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"block"
+							],
+							"query": [
+								{
+									"key": "set",
+									"value": "true"
+								},
+								{
+									"key": "duration",
+									"value": "10000"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Start Performance Test",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/block?set=true&duration=10000",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"block"
+									],
+									"query": [
+										{
+											"key": "set",
+											"value": "true"
+										},
+										{
+											"key": "duration",
+											"value": "10000"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "14"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e-4WMBVg0ZO4CtAcy7QB9ujbVV7E8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Oct 2022 18:50:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"block\": true\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Announcements",
+			"item": [
+				{
+					"name": "Send Announcements",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"text\": \"This is a sample text 11\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/announcements",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"announcements"
+							]
+						},
+						"description": "Saves a message to the public chat"
+					},
+					"response": [
+						{
+							"name": "Send Public Chat Message",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"text\": \"This is a sample text 11\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/public-messages/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"public-messages",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "103"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"67-efSYOv7LUfC3wTrFq/TCXG3luRQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Sep 2022 03:17:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"displayName\": \"tp55\",\n    \"text\": \"This is a sample text 11\",\n    \"timestamp\": 1664335034921\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Latest Announcements",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/announcements?amount=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"announcements"
+							],
+							"query": [
+								{
+									"key": "amount",
+									"value": "5"
+								}
+							]
+						},
+						"description": "Retrieves the latest {{amount}} messages posted in the public chat. This are sorted from latest to oldest"
+					},
+					"response": [
+						{
+							"name": "Get Latest Announcements",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/announcements?amount=5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"announcements"
+									],
+									"query": [
+										{
+											"key": "amount",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "879"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"36f-AdNBJARCkWdAAVyMB3x4JEblJPs\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Sep 2022 03:17:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"6333bcbab76bffde652d5114\",\n        \"username\": \"tp55\",\n        \"displayName\": \"tp55\",\n        \"timestamp\": \"2022-09-28T03:17:14.921Z\",\n        \"text\": \"This is a sample text 11\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"63316e2d7af1e05ac332739b\",\n        \"username\": \"tp55\",\n        \"displayName\": \"tp55\",\n        \"timestamp\": \"2022-09-26T09:17:33.608Z\",\n        \"text\": \"This is a sample text 11\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"63316be3532898a5ae0f0174\",\n        \"username\": \"tp55\",\n        \"displayName\": \"tp55\",\n        \"timestamp\": \"2022-09-26T09:07:47.416Z\",\n        \"text\": \"This is a sample text 10\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"63316be0532898a5ae0f0171\",\n        \"username\": \"tp55\",\n        \"displayName\": \"tp55\",\n        \"timestamp\": \"2022-09-26T09:07:44.872Z\",\n        \"text\": \"This is a sample text 9\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"63316bdd532898a5ae0f016e\",\n        \"username\": \"tp55\",\n        \"displayName\": \"tp55\",\n        \"timestamp\": \"2022-09-26T09:07:41.874Z\",\n        \"text\": \"This is a sample text 8\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				}
+			],
+			"description": "Everything related to public messages handling, both saving and retrieving"
+		},
+		{
+			"name": "Search",
+			"item": [
+				{
+					"name": "Search",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"search"
+							]
+						},
+						"description": "Request Body:\n\nKEY: \"searchType\" and \"text\"\n\nVALUE:\n\nThis is the values you can put for \"searchType\":  \nuserByUsername  \nuserByStatus  \nannouncementsByText  \npublicByText  \nprivateByText\n\n\"text\" is the content for the searchType user has chosen."
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

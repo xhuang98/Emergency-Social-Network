@@ -1,0 +1,164 @@
+<!-- Medical Nearby Modal -->
+<div class="modal fade" id="medicalNearbyModal" data-bs-backdrop="static" data-bs-keyboard="false"
+	tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="staticBackdropLabel">
+					Medical Nearby
+				</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+					onclick="handleMedicalNearbyModalCloseButtonClick()"></button>
+			</div>
+			<div class="modal-body" style="background-color: #f5f5f5;">
+				<div class="medical-nearby-list d-none">
+					<div class="top-buttons">
+						<button type="button" class="btn btn-warning mp-left" onclick="handleMPToggleToMapView()">Map View</button>
+						<button type="button" class="btn btn-success mp-right" onclick="handleEditInfoClick()">Add Entry</button>
+					</div>
+					<div class="search-box">
+						<div class="primary-container d-flex justify-content-start">
+							<div class="dropdown">
+								<select class="criteria-select form-select" id="mp-search-criteria" aria-label="Default select example">
+									<option value="1">Location</option>
+									<option value="2">Name</option>
+								</select>
+							</div>
+							<div class="search-keyword-field flex-grow-1">
+								<input type="text" class="search-input form-control" id="mp-search-input-text" placeholder="enter keyword.." aria-label="Search" aria-describedby="basic-addon1">
+							</div>
+						</div>
+						<div class="search-button-wrapper mt-2">
+							<button type="button" class="search-button w-100 btn btn-primary" onclick="handleMPSearchButtonClick()">Search</button>
+						</div>
+					</div>
+					<div class="medical-nearby-search-result-box mt-3">
+						<div class="mp-list-container">
+						</div>
+						<div class="mp-list-error">
+						</div>
+						<div class="mp-list-loader-wrapper">
+						  <div class="loader-flex-wrapper">
+							<div class="loader-container">
+							  <div class="spinner-border text-primary" style="width: 4rem; height: 4rem;" role="status">
+								<span class="visually-hidden">Loading...</span>
+							  </div>
+							  <div class="mt-2">
+								<span class="text-muted">Loading...</span>
+							  </div>
+							</div>
+						  </div>
+						</div>
+					</div>
+				</div>
+				<div class="medical-nearby-map d-none">
+					<div class="top-buttons">
+						<button type="button" class="btn btn-warning mp-left" onclick="handleMPToggleToListView()">List View</button>
+					</div>
+					<div class="medical-nearby-map-message"></div>
+					<div id="medical-nearby-map-container" class="medical-nearby-map-container"></div>
+					<div class="mp-map-loader-wrapper">
+					  <div class="loader-flex-wrapper">
+						<div class="loader-container">
+						  <div class="spinner-border text-primary" style="width: 4rem; height: 4rem;" role="status">
+							<span class="visually-hidden">Loading...</span>
+						  </div>
+						  <div class="mt-2">
+							<span class="text-muted">Loading...</span>
+						  </div>
+						</div>
+					  </div>
+					</div>
+				</div>
+				<div class="medical-nearby-edit d-none">
+					<div class="top-buttons">
+						<button type="button" class="btn btn-outline-secondary mp-left" onclick="handleEditInfoBackClick()">Back</button>
+						<button type="button" class="btn btn-success mp-right" onclick="handleEditInfoSaveClick()">Save</button>	
+					</div>
+					<div class="medical-nearby-edit-error"></div>
+					<div>
+						<div class="mp-edit name-field-box">
+							<label for="mp-edit-info-name" class="mp-edit-label form-label">Medical Provider Name *</label>
+							<input type="text" name="name" required class="form-control form-control-lg"
+							  id="mp-edit-info-name" placeholder="name">
+						</div>
+						<div class="mp-edit capacity-field">
+							<div class="mp-edit-label capacity-text">
+								Capacity
+							</div>
+							<div class="capacity-choices">
+								<div class="capacity-label">0%</div>
+								<button type="button" id="capacity-green-button" class="btn-default capacity-green" onclick="handleCapacityClick('green')"></button>
+								<div class="capacity-label">30%</div>
+								<button type="button" id="capacity-yellow-button" class="btn-default capacity-yellow" onclick="handleCapacityClick('yellow')"></button>
+								<div class="capacity-label">50%</div>
+								<button type="button" id="capacity-orange-button" class="btn-default capacity-orange" onclick="handleCapacityClick('orange')"></button>
+								<div class="capacity-label">70%</div>
+								<button type="button" id="capacity-red-button" class="btn-default capacity-red" onclick="handleCapacityClick('red')"></button>
+								<div class="capacity-label">100%</div>
+							</div>
+						</div>
+						<div class="mp-edit intro-field-box">
+							<label for="mp-edit-info-intro" class="mp-edit-label form-label">Introduction</label>
+							<input type="text" name="intro" required class="form-control form-control-lg"
+							  id="mp-edit-info-intro" placeholder="introduction">
+						</div>
+						<div class="mp-edit address-field-box">
+							<label for="mp-edit-info-address" class="mp-edit-label form-label">Address *</label>
+							<label for="mp-edit-info-address" class="mp-edit-label mp-address-notes form-label">(Include secondary address or directions in Additional Notes below)</label>
+							<input type="text" name="address" required class="form-control form-control-lg"
+							  id="mp-edit-info-address" placeholder="address">
+						</div>
+						<div class="mp-edit phone-field-box">
+							<label for="mp-edit-info-phone" class="mp-edit-label form-label">Phone</label>
+							<input type="number" name="phone" required class="form-control form-control-lg"
+							  id="mp-edit-info-phone" placeholder="phone number">
+						</div>
+						<div class="mp-edit notes-field-box">
+							<label for="mp-edit-info-notes" class="mp-edit-label form-label">Additional Notes</label>
+							<textarea type="text" name="notes" required class="form-control form-control-lg"
+							  id="mp-edit-info-notes" placeholder="notes"></textarea>
+						</div>
+					</div>
+					<button type="button" class="btn btn-danger w-100 mp-delete" onclick="handleDeleteClick()">Delete Entry</button>
+				</div>
+				<div class="medical-nearby-info d-none">
+					<div class="top-buttons">
+						<button type="button" class="btn btn-outline-secondary mp-left" onclick="handleMPInfoBackClick()">Back</button>
+						<button type="button" class="btn btn-primary mp-right" onclick="handleEditInfoClick()">Edit</button>
+					</div>
+					<div>
+						<div class="name-info-box">
+							<div id="mp-info-name"></div>
+						</div>
+						<div class="capacity-info">
+							<div class="mp-info-label">Capacity</div>
+							<div id="mp-info-capacity-indicator"></div>
+							<div id="mp-info-capacity-indicator-text"></div>
+						</div>
+						<label class="mp-info-label">Introduction</label>
+						<div class="mp-info">
+							<div class="mp-info-value intro-info-box" id="mp-info-intro"></div>
+						</div>
+						<label class="mp-info-label">Address</label>
+						<div class="mp-info">
+							<div class="mp-info-value address-info-box" id="mp-info-address"></div>
+						</div>
+						<label class="mp-info-label">Phone</label>
+						<div class="mp-info">
+							<div class="mp-info-value phone-info-box" id="mp-info-phone"></div>
+						</div>
+						<label class="mp-info-label">Additional Notes</label>
+						<div class="mp-info">
+							<div class="mp-info-value notes-info-box" id="mp-info-notes"></div>
+						</div>
+						<div class="last-updated-info" id="mp-info-last-updated"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="/js/partials/medical_nearby.js"></script>

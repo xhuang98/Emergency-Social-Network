@@ -1,0 +1,55 @@
+<div class="search-page-wrapper">
+
+	<div class="search-page-container">
+		<div class="search-box">
+			<div class="primary-container d-flex justify-content-start">
+				<div class="dropdown">
+					<select class="criteria-select form-select" aria-label="Default select example">
+						<option selected>Select criteria</option>
+						<option value="1">User</option>
+						<option value="2">Status</option>
+						<option value="3">Public Message</option>
+						<option value="3">Private Message</option>
+						<option value="3">Announcement</option>
+					</select>
+				</div>
+				<div class="search-keyword-field flex-grow-1">
+					<input type="text" class="search-input form-control" placeholder="enter keyword..."
+						aria-label="Username" aria-describedby="basic-addon1">
+				</div>
+			</div>
+			<div class="search-button-wrapper mt-2">
+				<button type="button" class="search-button btn btn-success"
+					onclick="search.handleSearchButtonClick()">Search</button>
+			</div>
+		</div>
+
+		<div class="search-result-box mt-2">
+			<div class="overflow-wrapper">
+				<div class="no-results-found-image-wrapper show">
+					<img src="/icons/search-not-found.svg" />
+					<div class="mt-4 text-secondary">
+						<h4>No Results Found</h4>
+					</div>
+				</div>
+			</div>
+			<div class="loader-wrapper">
+				<div class="loader-flex-wrapper">
+					<div class="loader-container">
+						<div class="spinner-border text-primary" style="width: 4rem; height: 4rem;" role="status">
+							<span class="visually-hidden">Searching...</span>
+						</div>
+						<div class="mt-2">
+							<span class="text-muted">Searching...</span>
+						</div>
+						<div class="mt-2">
+							<button type="button" class="stop-button btn btn-danger"
+								onclick="search.handleStopSearchButtonClick()">Stop</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
